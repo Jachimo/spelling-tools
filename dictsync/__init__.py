@@ -1,0 +1,1 @@
+# dictsync - synchronize dictionary files
