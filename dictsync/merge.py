@@ -3,14 +3,7 @@
 import argparse
 import sys
 
-from .utils import (
-    detect_format,
-    read_firefox_dict,
-    read_chrome_old_dict,
-    read_chrome_new_dict,
-    write_firefox_dict,
-    write_chrome_dict
-)
+from .utils import *
 
 def main():
     parser = argparse.ArgumentParser(
@@ -42,6 +35,7 @@ def main():
         if fmt not in ['chrome-old', 'chrome-new', 'firefox', 'apple']:
             print(f"Unsupported format '{fmt}' for file: {input_file}", file=sys.stderr)
             return 1
+        
         try:
             if fmt == 'chrome-old':
                 words = read_chrome_old_dict(input_file)
